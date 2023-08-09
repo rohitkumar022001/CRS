@@ -162,17 +162,20 @@ public class studentApp {
 			pstmt.setString(2, getPassword());
 
 			int x = pstmt.executeUpdate();
+			
 			if (x > 0) {
 				// System.out.println("Student Registered------------ :");
-				String sql1 = "insert into srequest values(?,?)";
+				String sql1 = "insert into srequest values(?,?,?)";
 
 					pstmt = con.prepareStatement(sql1);
 
 					pstmt.setString(1, getUser_name());
 
 					pstmt.setString(2, getPassword());
+					pstmt.setInt(3, getSid());
 
 					int y = pstmt.executeUpdate();
+					
 
 					if (y > 0) {
 
@@ -186,7 +189,7 @@ public class studentApp {
 							pstmt.setString(4, getEmail());
 
 							int z = pstmt.executeUpdate();
-
+							
 							if (z > 0) {
 								// CRSApp.sleep(3000);
 								// System.out.println(s.getSname() + " Added------------ :");

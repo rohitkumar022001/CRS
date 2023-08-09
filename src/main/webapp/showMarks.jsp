@@ -8,13 +8,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="html, css, html tables, table">
+    <meta name="Description" content="html table">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resource/assets/css/report.css">
 </head>
 <body>
-<h1 align="center">Report Card</h1><br><br>
-<a href="Logout">Logout</a><br><br>
-<p align="right"><a href="menu.jsp">Back To Menu</a></p>
-<br><br>
 <%
 int cid=0;
 String pname="";
@@ -81,7 +81,7 @@ try {
          	 cname=r3.getString(2);
             }
             
-             out.println("<b>Student Id</b> : "+sid+"<br><br>");
+             /* out.println("<b>Student Id</b> : "+sid+"<br><br>");
             out.println("<b>Student Name</b> : "+sname+"<br><br>");
             out.println("<b>Professor Assigned</b> : "+pname+"<br><br>");
             out.println("<b>Course Assigned</b> : "+cname+"<br><br>");
@@ -89,12 +89,55 @@ try {
             out.println("<b>test2_score</b> : "+test2_score+"<br><br>");
             out.println("<b>practical_score</b> : "+practical_score+"<br><br>");
             out.println("<b>final_score</b> : "+final_score+"<br><br>");
-            out.println("<b>Grade</b> : "+grade+"<br><br>");
+            out.println("<b>Grade</b> : "+grade+"<br><br>"); */
              
 }
 catch(Exception e){
 	e.printStackTrace();
 }
 %>
+
+   <div class="container">
+      <h2 align="center">Report Card</h2><br><br>
+      <table>
+        <thead>
+          <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Professor Assigned</th>
+            <th>Course Assigned</th>
+            <th>Test1_Score</th>
+            <th>Test2_Score</th>
+            <th>Practical_Score</th>
+            
+          <tr>  
+        </thead>
+        <tbody>
+          <tr>
+            <td><%out.println(sid);%></td>
+            <td><%out.println(sname);%></td>
+            <td><%out.println(pname);%></td>
+            <td><%out.println(cname);%></td>
+            <td><%out.println(test1_score);%></td>
+            <td><%out.println(test2_score);%></td>
+            <td><%out.println(practical_score);%></td>
+            
+          </tr>
+          
+        </tbody>
+    
+        <tfoot>
+          <tr>
+            <td colspan=3>Maximum Marks:  <%out.println("100");%></td>
+            <td colspan=3>Marks Obtained: <%out.println(final_score);%></td>
+            <td colspan=2>Grade: <%out.println(grade);%></td>
+          </tr>
+        </tfoot> 
+      </table>
+      <br><br>
+      <a href="Logout">Logout</a>
+      <span style="margin: 0 285px"> </span>
+<a href="menu.jsp">Back To Menu</a>
+    </div>
 </body>
 </html>
